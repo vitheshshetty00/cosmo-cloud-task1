@@ -25,7 +25,7 @@ type FieldItemProps = {
 const FieldItem = ({ data, handleState, handleDelete }: FieldItemProps) => {
 	const [item, setItem] = useState<InputData>(data);
 	const handleObjState = (ob: InputData) => {
-		const temp = item.obj?.map((i) => (ob.id == i.id ? item : i));
+		const temp = item.obj?.map((i) => (ob.id == i.id ? ob: i));
 		setItem({ ...item, obj: temp });
 	};
 	const handleObjDelete = (id: number) => {
@@ -44,10 +44,11 @@ const FieldItem = ({ data, handleState, handleDelete }: FieldItemProps) => {
 						placeholder="AddName"
 						value={item.fieldName}
 						onChange={(e) => {
+							
 							setItem({ ...item, fieldName: e.target.value });
 							handleState(item);
 						}}
-						className={`outline-none border-none w-auto m-2 [&:not(:focus)]:bg-slate-50 [&:not(:focus)]:w-[100px] `}
+						className={`outline-none border-none rounded-sm w-auto m-2 [&:not(:focus)]:bg-slate-50 [&:not(:focus)]:w-[100px] `}
 					/>
 					<select
 						className="rounded-sm bg-slate-200 outline-none p-1"
