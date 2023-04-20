@@ -7,4 +7,7 @@
   background-color:rgba( 241, 245, 249,1);
   align-items: center;
 }
+.revealer:hover .hidden{
+  display:  flex;
 
+}

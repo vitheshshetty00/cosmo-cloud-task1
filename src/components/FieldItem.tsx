@@ -37,7 +37,7 @@ const FieldItem = ({ data, handleState, handleDelete }: FieldItemProps) => {
 
 	return (
 		<div className="flex flex-col flex-1 ml-6 ">
-			<div className="flex flex-1 flex-row  py-2 justify-between rounded-md hover:bg-slate-200 border-b-2">
+			<div className="flex flex-1 flex-row  py-2 justify-between rounded-md hover:bg-slate-200 border-b-2 revealer ">
 				<div>
 					<input
 						type="text"
@@ -75,7 +75,7 @@ const FieldItem = ({ data, handleState, handleDelete }: FieldItemProps) => {
 					</select>
 				</div>
 
-				<div className=" flex items-center ">
+				<div className="  items-center hidden ">
 					<label htmlFor="switch">Required</label>
 					<Switch
 						checked={item.required}
@@ -98,9 +98,9 @@ const FieldItem = ({ data, handleState, handleDelete }: FieldItemProps) => {
 								setItem({ ...item, obj: temp });
 								handleState(item);
 
-								// setItem(temp)
+								
 							}}
-							className=" font-mono font-medium bg-white text-black p-2 mr-1 "
+							className=" font-mono font-medium bg-white rounded-md text-black p-2 mr-1 "
 						>
 							+
 						</button>
